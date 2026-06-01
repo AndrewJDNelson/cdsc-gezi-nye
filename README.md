@@ -1,0 +1,2 @@
+# cdsc-gezi-nye
+Training
