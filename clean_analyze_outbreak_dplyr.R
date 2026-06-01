@@ -9,10 +9,13 @@
   library(skimr)
   library(odbc)
   library(zoo)
-
+library(yaml)
 
 # ---- Read data ----
-linelist <- read_csv("cdsc_new_year_outbreak_linelist.csv", show_col_types = FALSE)
+config <- yaml::read_yaml("config.yaml")
+
+
+linelist <- read_csv(config$Path$data_file_address, show_col_types = FALSE)
 
 # Exposure event datetime (assumed)
 party_dt <- ymd_hm("2026-01-01 20:00", tz = "UTC")
